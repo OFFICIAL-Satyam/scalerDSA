@@ -2,26 +2,31 @@
 using namespace std;
 int main()
 {
-    int a[] = {1, 5, 7, 6, 4};
-    int sum = 9;
-
+    int a[] = {1, 2, 4, 5};
+    int diff = 2;
     int x = -1;
     int y = -1;
+    int flag = 0;
     unordered_map<int, int> m;
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         x = a[i];
-        y = sum - x;
+        y = x - diff;
 
         if (m.find(y) != m.end())
         {
-            cout << i << " " << m[y] << endl;
-            break;
+            flag = 1;
+            cout << "1" << endl;
         }
         if (m.find(x) == m.end())
         {
-            m[x] = i;
+            m[x]++;
         }
+    }
+
+    if (flag == 0)
+    {
+        cout << "0" << endl;
     }
 
     return 0;
